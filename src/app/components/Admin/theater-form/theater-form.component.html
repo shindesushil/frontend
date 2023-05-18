@@ -1,0 +1,66 @@
+<div>
+    <div class="jumbotron p-3">
+        <h1 class="text-center">Add New Theater</h1>
+    </div>
+    <div class="form-block">
+        <div class="form-group py-2">
+            <label for="theaterName">Name of The Theater</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Name"
+            >
+        </div>
+        <div class="form-group py-2">
+            <label for="metroLocation">Metro Location</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Metro Location"
+            >
+        </div>
+        <div class="form-group py-2">
+            <label for="district">District</label>
+            <input 
+                type="text" 
+                class="form-control" 
+                placeholder="District"
+            >
+        </div>
+        <div class="form-group py-2">
+            <label for="shows">Number of Shows</label>
+            <input 
+                type="number" 
+                class="form-control" 
+                placeholder="Shows"
+            >
+        </div>
+        <div class="form-group py-2">
+            <label for="seatingCapacity">Seating Capacity</label>
+            <input 
+                type="number" 
+                class="form-control" 
+                placeholder="Seating Capacity"
+            >
+        </div>
+        <div class="form-group py-2">
+            <label for="image">Image</label>
+            <input 
+                type="file" 
+                class="form-control" 
+                placeholder="Image"
+            >
+            <div id="hoursHelp" class="form-text">Max size 70 Kb
+                <i *ngIf="file.size">
+                    (Selected Image Size: {{file.size/1024 | number:'1.0-0'}} Kb)
+                </i>
+                <i *ngIf="!file.size">
+                    (Selected Image Size: 0 Kb)
+                </i>
+             </div>
+        </div>
+        <div class="form-group py-2">
+            <button class="btn btn-dark">Add</button>
+        </div>
+    </div>
+</div>

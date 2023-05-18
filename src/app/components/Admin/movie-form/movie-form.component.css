@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.container div{
+    width: 70%;
+    /* margin: auto; */
+}
+
+.container div div{
+    width: 100%;
+}

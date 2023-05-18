@@ -1,0 +1,84 @@
+<div class="container pt-4">
+    <div class="pt-4">
+        <!-- {{sourceData.movieName + " " + language + " " + duration + " " + thumbnail}} -->
+        <!-- {{duration}} -->
+
+        <div class="mb-3">
+           <label for="name" class="form-label">Name Of The Movie</label>
+           <input 
+                type="text" 
+                class="form-control" 
+                id="name" 
+                placeholder="Name"
+                [(ngModel)] ="movieName"
+            >
+        </div>
+        <div class="mb-3">
+            <label for="language" class="form-label">Language</label>
+            <input 
+                 type="text" 
+                 class="form-control" 
+                 id="language" 
+                 placeholder="Language"
+                 [(ngModel)] ="language"
+             >
+         </div>
+         <div class="mb-3">
+            <label for="name" class="form-label">Duration</label>
+            <div class="row">
+                <div class="col-1">
+                    <div class="row">
+                        <div class="col">
+                            <div id="hoursHelp" class="form-text">Hours</div>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="hours" 
+                                placeholder="Hours"
+                                min="0"
+                                [(ngModel)] ="duration[0]"
+                            >
+                        </div>
+                        <div class="col">
+                            <div id="minutesHelp" class="form-text">Minutes</div>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="minutes" 
+                                placeholder="Minutes"
+                                min="0"
+                                [(ngModel)] ="duration[1]"
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="mb-3">
+            <label for="thumbnail" class="form-label">Thumbnail</label>
+            <input 
+                 type="file" 
+                 class="form-control" 
+                 id="thumbnail" 
+                 placeholder="Thumbnail"
+                (change)="getFile($event)"
+             >
+             <div id="hoursHelp" class="form-text">Max size 70 Kb
+                <i *ngIf="file.size">
+                    (Selected Image Size: {{file.size/1024 | number:'1.0-0'}} Kb)
+                </i>
+                <i *ngIf="!file.size">
+                    (Selected Image Size: 0 Kb)
+                </i>
+             </div>
+         </div>
+
+         <div class="mb-3" *ngIf="!sourceData">
+            <button class="btn btn-dark" (click)="handleSubmit()">Add</button>
+         </div>
+         <div class="mb-3" *ngIf="sourceData">
+            <button class="btn btn-warning" (click)="handleUpdate()">Update</button>
+         </div>
+    </div>  
+</div>
+

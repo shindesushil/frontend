@@ -1,0 +1,19 @@
+<div class=" pt-4 px-4">
+    <a routerLink="add" class="btn btn-info float-end">Add New Movie</a>
+</div>
+<div *ngIf="allMovies.length > 0" class="row p-2 px-4 w-100">
+    <div class="col-lg-3 col-md-4 col-sm-12 mt-4 movie-card" *ngFor="let movie of allMovies">
+        <div class="card">
+            <div class="card-img">
+                <img [src]="movie.thumbnail" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{movie.movieName}}</h5>
+                <p class="card-text"><b>Duration:</b> {{movie.duration}}</p>
+                <p class="card-text"><b>Language:</b> {{movie.language}}</p>
+                <a [routerLink]="movie.movie_id" class="btn btn-warning">Edit</a>
+                <a class="ms-2 btn btn-danger" (click)="handleDelete(movie._id)">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>

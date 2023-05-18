@@ -1,0 +1,10 @@
+<div *ngIf="movie">
+    <div class="jumbotron p-3">
+        <h1 class="text-center">Update Movie</h1>
+    </div>
+    <app-movie-form [movie]="movie"></app-movie-form>
+</div>
+
+<div *ngIf="!movie">
+    noo
+</div>

@@ -1,0 +1,29 @@
+nav{
+    background: transparent;
+    /* color: #fff; */
+}
+
+.navbar-brand{
+    /* font-size: 1.3rem; */
+    font-weight: bolder;
+}
+
+.nav-link{
+    font-size: 1.2rem;
+}
+
+.nav-link.active{
+    /* color: #fff !important; */
+}
+
+.nav-link.active::before{
+    content: "";
+     width: 55px;
+     height: .2em;
+     background: #ff4f38;
+     
+     position: absolute;
+     bottom: 13px;
+     /* bottom: -2px;
+     left: 0; */
+}

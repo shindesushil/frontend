@@ -1,0 +1,23 @@
+.banner{
+    background: url('../assets/popcorn-bucket-background.jpg');
+    width: 100%;
+    height: calc(100vh);
+    background-size: cover;
+
+    color: #fff;
+
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
+.banner h1{
+    font-size: 4rem;
+
+    padding-top: 9rem;
+    padding-left: 5rem;
+}
+
+.banner h1 s{
+    /* text-decoration-color: #ff4f38 ; */
+}
