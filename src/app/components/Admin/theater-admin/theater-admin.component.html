@@ -1,3 +1,20 @@
 <div class=" pt-4 px-4">
     <a routerLink="add" class="btn btn-info float-end">Add New Theater</a>
 </div>
+<div *ngIf="allTheaters.length > 0" class="row p-2 px-4 w-100">
+    <div class="col-lg-3 col-md-4 col-sm-12 mt-4 movie-card" *ngFor="let theater of allTheaters">
+        <div class="card">
+            <div class="card-img" *ngIf="theater.image">
+                <img [src]="theater.image" class="card-img-top" alt="...">
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{theater.theatreName}}</h5>
+                <p class="card-text"><b>Location:</b> {{theater.metroLocation}}, {{theater.district}}</p>
+                <p class="card-text"><b>Number od Shows:</b> {{theater.numberOfShows}}</p>
+                <p class="card-text"><b>Seating Capacity:</b> {{theater.seatingCapacity}}</p>
+                <a [routerLink]="theater.theatre_id" class="btn btn-warning">Edit</a>
+                <a class="ms-2 btn btn-danger" (click)="handleDelete(theater._id)">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
