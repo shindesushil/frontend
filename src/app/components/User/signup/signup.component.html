@@ -4,13 +4,14 @@
     </div>
     <div class="col-md-6 col-sm-12 signup-form">
         <div class="my-form">
-            <h1 class="text-center">Signup</h1>
+            <h1 class="text-center">Join Us</h1>
             <div class="form-group p-2">
                 <label for="username">Username</label>
                 <input 
                     type="text" 
                     class="form-control"
                     placeholder="Username"
+                    [(ngModel)] = "username"
                 >
             </div>
             <div class="form-group p-2">
@@ -19,7 +20,12 @@
                     type="email" 
                     class="form-control"
                     placeholder="Email"
+                    [(ngModel)] = "email"
                 >
+                <p 
+                    class="form-text text-danger m-0 p-0" 
+                    *ngIf="!email.match(patternEmail) && email"
+                >Invalid Email!</p>
             </div>
             <div class="form-group p-2">
                 <label for="password">Password</label>
@@ -27,7 +33,13 @@
                     type="password" 
                     class="form-control"
                     placeholder="Password"
+                    [(ngModel)] = "password"
                 >
+                <p 
+                    class="form-text text-danger m-0 p-0" 
+                    *ngIf="!password.match(patternPassword) && password"
+                >Invalid Password! <br> (Must be at least 8 charecters long. And contain
+                 1 uppercase, 1 lowercase and 1 number.)</p>
             </div>
             <div class="form-group p-2">
                 <label for="cpassword">Confirm Password</label>
@@ -35,10 +47,19 @@
                     type="password" 
                     class="form-control"
                     placeholder="Confirm Password"
+                    [(ngModel)] = "cpassword"
                 >
+                <p 
+                    class="form-text text-danger m-0 p-0" 
+                    *ngIf="password && cpassword && password !== cpassword"
+                >Password dosen't match!</p>
             </div>
             <div class="form-group p-2">
-                <a class="btn btn-warning theme-yellow-bg">Signup</a>
+                <button 
+                    class="btn btn-warning theme-yellow-bg float-end"
+                    [disabled]="!email.match(patternEmail) || !password.match(patternPassword) || !email || !password || password !== cpassword"
+                    (click)="handleSignup()"
+                >Signup</button>
             </div>
         </div>
     </div>

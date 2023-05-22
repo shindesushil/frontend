@@ -22,6 +22,9 @@ import { AddShowsComponent } from './components/Admin/add-shows/add-shows.compon
 import { ShowFormComponent } from './components/Admin/show-form/show-form.component';
 import { UpdateShowComponent } from './components/Admin/update-show/update-show.component';
 import { SignupComponent } from './components/User/signup/signup.component';
+import { SigninComponent } from './components/User/signin/signin.component';
+import { MoviesComponent } from './components/User/movies/movies.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { SignupComponent } from './components/User/signup/signup.component';
     AddShowsComponent,
     ShowFormComponent,
     UpdateShowComponent,
-    SignupComponent
+    SignupComponent,
+    SigninComponent,
+    MoviesComponent
   ],
   imports: [
     BrowserModule,
