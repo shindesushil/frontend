@@ -14,12 +14,20 @@ export class TheaterService {
     return this.http.get(API + '/theatres')
   }
 
+  getTheater(id:any){
+    return this.http.get(API + '/theatres/' + id)
+  }
+
   insertTheater(body:any){
     return this.http.post(API + '/theatres' , body)
   }
 
   deleteTheater(id:any){
     return this.http.delete(API + '/theatres/' + id)
+  }
+
+  updateTheater(id:any, body: any){
+    return this.http.put(API + '/theatres/' + id, body)
   }
 
 }

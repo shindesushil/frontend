@@ -16,6 +16,12 @@ import { MovieFormComponent } from './components/Admin/movie-form/movie-form.com
 import { UpdateMovieComponent } from './components/Admin/update-movie/update-movie.component';
 import { AddTheaterComponent } from './components/Admin/add-theater/add-theater.component';
 import { TheaterFormComponent } from './components/Admin/theater-form/theater-form.component';
+import { UpdateTheaterComponent } from './components/Admin/update-theater/update-theater.component';
+import { ShowsAdminComponent } from './components/Admin/shows-admin/shows-admin.component';
+import { AddShowsComponent } from './components/Admin/add-shows/add-shows.component';
+import { ShowFormComponent } from './components/Admin/show-form/show-form.component';
+import { UpdateShowComponent } from './components/Admin/update-show/update-show.component';
+import { SignupComponent } from './components/User/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { TheaterFormComponent } from './components/Admin/theater-form/theater-fo
     MovieFormComponent,
     UpdateMovieComponent,
     AddTheaterComponent,
-    TheaterFormComponent
+    TheaterFormComponent,
+    UpdateTheaterComponent,
+    ShowsAdminComponent,
+    AddShowsComponent,
+    ShowFormComponent,
+    UpdateShowComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,

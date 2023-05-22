@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TheaterService } from 'src/app/services/admin/theater.service';
 
 @Component({
@@ -10,7 +11,7 @@ export class TheaterAdminComponent implements OnInit {
 
   allTheaters:any = []
 
-  constructor(private theaterService: TheaterService) { 
+  constructor(private theaterService: TheaterService, private router: Router) { 
     theaterService.getAllTheaters().subscribe(data => {
       this.allTheaters = data
       console.log(this.allTheaters);
@@ -29,5 +30,7 @@ export class TheaterAdminComponent implements OnInit {
       })
     }
   }
+
+  
 
 }

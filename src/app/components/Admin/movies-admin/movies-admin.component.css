@@ -1,4 +1,26 @@
-.card{
+.movie-card{
+    height: 30rem;
+    overflow: hidden;
+}
+
+.card-img{
+    height: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+}
+
+.card-img .card-body{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: linear-gradient(0deg, white, #ffffffa6);
+}
+
+/* .card{
     height: 30rem;
     overflow: hidden;
 }
@@ -7,3 +29,7 @@
     height: 65%;
     overflow: hidden;
 }
+
+.card-img img{
+    height: 100%;
+} */

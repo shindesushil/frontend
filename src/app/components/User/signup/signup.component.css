@@ -1,0 +1,22 @@
+.signup-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-img img{
+    height: 50%;
+    width: auto;
+}
+
+.signup-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-form{
+    width: 70%;
+    border-left: 1px solid #d9d9d9;
+    padding-left: 2rem;
+}

@@ -1,0 +1,76 @@
+<div class="container pt-4">
+    <div class="pt-4">
+        <div class="form-group pt-2">
+            <label for="movie">Movie</label>
+            <select 
+                name="movie" 
+                id="movie" 
+                class="form-select"
+                aria-placeholder="Movie"
+                [(ngModel)] = "selectedMovie"
+                (change)="setSelectedMovie()"
+            >
+                <option value="" selected disabled>-- Select Movie --</option>
+                <option *ngFor="let movie of movies" [value]="movie._id">
+                    {{movie.movieName}}
+                </option>
+            </select>
+            <div id="movieDetails" class="form-text" *ngIf="selectedMovie">
+                <i>
+                    Duration: {{selectedMovieObj.duration}} |
+                    Language: {{selectedMovieObj.language}}
+                </i>
+             </div>
+            <!-- {{selectedMovie}} -->
+        </div>
+        <div class="form-group pt-2">
+            <label for="theater">Theater</label>
+            <select 
+                name="theater" 
+                id="theater" 
+                class="form-select"
+                aria-placeholder="Theater"
+                [(ngModel)] = "selectedTheater"
+                (change)="setSelectedTheater()"
+            >
+            <option value="" selected disabled>-- Select Theater --</option>
+            <option *ngFor="let theater of theaters" [value]="theater._id">
+                {{theater.theatreName}}
+            </option>
+            </select>
+            <div id="movieDetails" class="form-text" *ngIf="selectedTheater">
+                <i>
+                    Location: {{selectedTheaterObj.metroLocation +", " + selectedTheaterObj.district}} |
+                    Seating Capacity: {{selectedTheaterObj.seatingCapacity}}
+                </i>
+             </div>
+        </div>
+        <div class="form-group pt-2">
+            <label for="time">Time Slot</label>
+            <input 
+                type="time" 
+                class="form-control"
+                placeholder="Time Slot"
+                [(ngModel)] = "timeSlot"
+            >
+        </div>
+        <div class="form-group pt-2">
+            <label for="price">Ticket Price</label>
+            <div class="input-group">
+                <input 
+                    type="number" 
+                    class="form-control"
+                    placeholder="Ticket Price"
+                    min="0"
+                    [(ngModel)] = "price"
+                >
+                <span class="input-group-text" id="basic-addon2">&#8377;</span>
+            </div>
+        </div>
+        <div class="form-group pt-2">
+            <a class="btn btn-dark" (click)="handleCreate()" *ngIf="!show">Create</a>
+            <a class="btn btn-warning" (click)="handleUpdate()" *ngIf="show">Update</a>
+        </div>
+    </div>  
+</div>
+

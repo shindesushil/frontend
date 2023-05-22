@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, AfterViewInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TheaterService } from 'src/app/services/admin/theater.service';
 
 
@@ -7,7 +8,7 @@ import { TheaterService } from 'src/app/services/admin/theater.service';
   templateUrl: './theater-form.component.html',
   styleUrls: ['./theater-form.component.css']
 })
-export class TheaterFormComponent implements OnInit {
+export class TheaterFormComponent implements OnInit, AfterViewInit {
 
   theaterName:string = ''
   metroLocation:string = ''
@@ -18,9 +19,22 @@ export class TheaterFormComponent implements OnInit {
 
   file:any = ''
 
-  constructor(private theaterService: TheaterService) { }
+  @Input() theater:any =''
+
+  constructor(private theaterService: TheaterService, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+      if(this.theater){
+        this.theaterName = this.theater.theatreName
+        this.metroLocation = this.theater.metroLocation
+        this.district = this.theater.district
+        this.shows = this.theater.numberOfShows
+        this.seatingCapacity = this.theater.seatingCapacity
+        this.image = this.theater.image
+      }
   }
 
   getFile(event:any){
@@ -59,7 +73,26 @@ export class TheaterFormComponent implements OnInit {
 
     this.theaterService.insertTheater(theater).subscribe(val => {
       console.log('Theater Added: ', val);
-      
+      alert('Done')
+      this.router.navigate(['admin', 'theaters'])
+    })
+
+  }
+
+  handleUpdate(){
+    let theater = {
+      theatreName: this.theaterName,
+      metroLocation: this.metroLocation,
+      district: this.district,
+      numberOfShows: this.shows,
+      seatingCapacity: this.seatingCapacity,
+      image: this.image
+    }
+
+    this.theaterService.updateTheater(this.theater._id, theater).subscribe(updated => {
+      console.log('Updated: ', updated);
+      alert('Done')
+      this.router.navigate(['admin', 'theaters'])
     })
 
   }

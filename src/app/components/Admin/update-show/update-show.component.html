@@ -1,0 +1,10 @@
+<div *ngIf="show">
+    <div class="jumbotron p-3">
+        <h1 class="text-center">Update Show</h1>
+    </div>
+    <app-show-form [show]="show"></app-show-form>
+</div>
+
+<div *ngIf="!show">
+    noo
+</div>

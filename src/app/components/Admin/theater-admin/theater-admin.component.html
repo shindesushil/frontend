@@ -12,7 +12,10 @@
                 <p class="card-text"><b>Location:</b> {{theater.metroLocation}}, {{theater.district}}</p>
                 <p class="card-text"><b>Number od Shows:</b> {{theater.numberOfShows}}</p>
                 <p class="card-text"><b>Seating Capacity:</b> {{theater.seatingCapacity}}</p>
-                <a [routerLink]="theater.theatre_id" class="btn btn-warning">Edit</a>
+                <a 
+                    [routerLink]="'edit/' + theater._id" 
+                    class="btn btn-warning"
+                >Edit</a>
                 <a class="ms-2 btn btn-danger" (click)="handleDelete(theater._id)">Delete</a>
             </div>
         </div>
