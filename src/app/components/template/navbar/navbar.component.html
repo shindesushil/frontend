@@ -18,7 +18,16 @@
               class="nav-link"
               routerLinkActive="active" 
               routerLink="movies"
+              [routerLinkActiveOptions]="{ exact: true }"
             >Movies</a>
+          </li>
+          <li class="nav-item" *ngIf="authService.isLoggedIn()">
+            <a 
+              class="nav-link"
+              routerLinkActive="active" 
+              routerLink="my-tickets"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >My Tickets</a>
           </li>
           
          

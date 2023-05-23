@@ -1,0 +1,33 @@
+.section-1{
+
+}
+
+.movie-section{
+    width: 100%;
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; */
+}
+
+.movie-section img{
+    height: 25rem;
+}
+
+.show-card{
+    width: 100%;
+    border: 1px solid #d9d9d9;
+    border-radius: 5px;
+}
+
+.show-card .header i{
+    color: #f2f2f2;
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.active-show{
+    background: #ff4f38;
+    border: none;
+    color: #fff;
+}

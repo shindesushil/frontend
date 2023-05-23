@@ -1,0 +1,23 @@
+.ticket{
+    /* height: 30rem; */
+}
+
+.ticket .ticket-img{
+    height: 50%;
+}
+
+.ticket .ticket-img img{
+    height: 100%;
+    width: 100%;
+}
+
+.ticket .ticket-body, .center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.ticket .ticket-body{
+    border: 1px solid #e1e1e1;
+}

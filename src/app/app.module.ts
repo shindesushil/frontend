@@ -24,6 +24,8 @@ import { UpdateShowComponent } from './components/Admin/update-show/update-show.
 import { SignupComponent } from './components/User/signup/signup.component';
 import { SigninComponent } from './components/User/signin/signin.component';
 import { MoviesComponent } from './components/User/movies/movies.component';
+import { BookTicketComponent } from './components/User/book-ticket/book-ticket.component';
+import { MyTicketsComponent } from './components/User/my-tickets/my-tickets.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { MoviesComponent } from './components/User/movies/movies.component';
     UpdateShowComponent,
     SignupComponent,
     SigninComponent,
-    MoviesComponent
+    MoviesComponent,
+    BookTicketComponent,
+    MyTicketsComponent
   ],
   imports: [
     BrowserModule,

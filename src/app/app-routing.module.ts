@@ -17,12 +17,16 @@ import { SignupComponent } from './components/User/signup/signup.component';
 import { SigninComponent } from './components/User/signin/signin.component';
 import { AdminGuardService } from './services/user/admin-guard.service';
 import { MoviesComponent } from './components/User/movies/movies.component';
+import { BookTicketComponent } from './components/User/book-ticket/book-ticket.component';
+import { MyTicketsComponent } from './components/User/my-tickets/my-tickets.component';
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path:'signup', component: SignupComponent},
   {path:'signin', component: SigninComponent},
   {path: 'movies', component: MoviesComponent},
+  {path: 'movies/book/:id', component:BookTicketComponent},
+  {path: 'my-tickets', component: MyTicketsComponent},
   {
     path:'admin', 
     component:AdminDashboardComponent,

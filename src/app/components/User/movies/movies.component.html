@@ -10,7 +10,7 @@
                     <b>Duration:</b> {{movie.duration}} <br>
                     <b>Language:</b> {{movie.language}}
                 </p>
-                <a class="btn btn-success">Book Now</a>
+                <a class="btn btn-success" [routerLink]="'book/' + movie._id">Book Now</a>
             </div>
         </div>
         heyy

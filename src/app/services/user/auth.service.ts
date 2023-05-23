@@ -17,7 +17,8 @@ export class AuthService {
       this.currentUser = {
         email: token.email,
         username: token.username,
-        _id: token._id
+        _id: token._id,
+        token: token.accessToken
       }
     }
    }

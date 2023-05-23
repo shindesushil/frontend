@@ -1,0 +1,90 @@
+<div class="row pt-4">
+    <div class="col-md-3 col-sm-12 section-1">
+
+        <div *ngIf="movie" class="p-2 movie-section">
+            <img [src]="movie.thumbnail" alt="">
+            <div>
+                <h3>
+                    {{movie.movieName}}
+                </h3>
+                <p>
+                    <b>Duration: </b> {{movie.duration}} <br>
+                    <b>Language: </b> {{movie.language}}
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="col-md-6 col-sm-12">
+        <h4>Available Shows</h4>
+        <div *ngIf="shows">
+            <div *ngFor="let show of showsData" class="show-card mt-2">
+                <div class="header bg-success text-white p-2">
+                    <h5 class="p-0 m-0">
+                        {{show.theaterName}} <i>
+                        ({{show.theaterMetroLocation}}, {{show.theaterDistrict}})
+                        </i>
+                    </h5>
+                    
+                </div>
+                <div class="time-slots p-2">
+                    <button 
+                        *ngFor="let item of show.shows" 
+                        class="btn border-success ms-1"
+                        (click)="setSelectedShow(item.showID)"
+                        [ngClass]="{'active-show' : item.showID === selectedShow._id}"
+                    >
+                        {{item.timeSlot}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 col-sm-12">
+        <div *ngIf="selectedShow" class="px-3">
+            <div class="form-group">
+                <label for="count">Number of Tickets</label>
+                <input 
+                    type="number" 
+                    class="form-control"
+                    min="1"
+                    [(ngModel)] = "noOfSeats"
+                >
+                <span class="form-text text-danger" *ngIf="noOfSeats <= 0">
+                    Invalid Amount of Seats
+                </span>
+            </div>
+            <table class="table w-100">
+                <tbody>
+                    <tr>
+                        <td>
+                            <p class="mt-4"><b>Ticket Price:</b> </p>
+                        </td>
+                        <td>
+                            <p class="mt-4">&#8377; {{selectedShow.price_per_seat}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p class="mt-4"><b>Total Amount: </b> </p>
+                        </td>
+                        <td>
+                            <p class="mt-4">&#8377; {{selectedShow.price_per_seat * noOfSeats}} </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <button 
+                                class="btn btn-primary"
+                                (click)="handlePayment()"
+                            >Pay &#8377; {{selectedShow.price_per_seat * noOfSeats}}</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </div>
+    </div>
+</div>

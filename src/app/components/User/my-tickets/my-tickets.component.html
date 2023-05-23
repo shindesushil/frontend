@@ -1,0 +1,25 @@
+<div class="row pt-2" *ngIf="data.length > 0">
+    <div class="col-md-3 col-sm-12 ticket ms-2 px-4" *ngFor="let ticket of data">
+        <div class="ticket-img">
+            <img [src]="ticket.thumbnail" alt="">
+        </div>
+        <div class="ticket-body">
+            <h3>
+                {{ticket.movieName}}
+            </h3>
+            <p class="form-text text-center">
+                <b>Language</b> <br> {{ticket.language}} <br>
+                <b>Duration</b> <br>{{ticket.duration}} <br>
+            </p>
+            <h5 class="text-success">
+                {{ticket.theaterName}}
+            </h5>
+            <button class="btn border-success" disabled>
+                {{ticket.timeSlot}}
+            </button>
+            <p class="text-danger">
+                <b>Persons: </b>{{ticket.seats}}
+            </p>
+        </div>
+    </div>
+</div>
